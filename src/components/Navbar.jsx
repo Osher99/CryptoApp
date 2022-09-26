@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className="logo-container">
                 <Avatar src={icon} size="large" />
                 <Typography.Title level={2} className="logo">
-                    <Link to="/" className="menu-logo-title">CryptoX {isMobile && <><br/ ></>} <small style={{ fontSize: '11px' }}>By Osher Dror</small></Link>
+                    <Link to="/" className="menu-logo-title">CryptoX {!isMobile && <><br/ ></>} <small style={{ fontSize: '11px' }}>By Osher Dror</small></Link>
                 </Typography.Title>
                 <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}>
                     <MenuOutlined />
