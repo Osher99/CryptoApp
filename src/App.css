@@ -110,9 +110,17 @@ a:hover{
     }
 
     .ant-menu{
-        position: absolute;
-        right: 0px;
+        position: absolute!important;
+        right: 0!important;
+        height: 100vh!important;
+        transition: 2s ease!important;
+        padding: 0px 15px!important;
     }
+
+    .slide {
+        transform: translateX(200px)!important;
+    }
+
     .home-title{
         font-size: 1.4rem !important;
     }
