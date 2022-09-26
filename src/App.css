@@ -76,6 +76,9 @@ a:hover{
     align-items: center;
 }
 
+.header-exchange {
+    align-items: center;
+}
 
 @media screen and (max-width:800px){
     .app{
@@ -366,4 +369,7 @@ width: 70%;
 }
 .menu-logo-title{
     color: white!important;
+}
+.expand-icon {
+    margin-left: 10px!important;
 }
