@@ -33,6 +33,11 @@ const Navbar = () => {
         }
     }, [screenSize])
 
+    const handleSelection = () => {
+        setActiveMenu(true);
+        setNavClass("slide");
+    }
+
     return (
         <div className="nav-container">
             <div className="logo-container">
@@ -50,16 +55,16 @@ const Navbar = () => {
             </div>
                 <Menu theme="dark" className={`menu-items ${navClass}`}>
                     <Menu.Item icon={<HomeOutlined />} key="homepage">
-                        <Link to="/" onClick={() => isMobile ? setActiveMenu(false) : null}>Home</Link>
+                        <Link to="/" onClick={() => handleSelection()}>Home</Link>
                     </Menu.Item>
                     <Menu.Item icon={<FundOutlined />} key="currencies">
-                        <Link to="/currencies" onClick={() => isMobile ? setActiveMenu(false) : null}>Currencies</Link>
+                        <Link to="/currencies" onClick={() => handleSelection()}>Currencies</Link>
                     </Menu.Item>
                     <Menu.Item icon={<MoneyCollectOutlined />} key="exchanges">
-                        <Link to="/exchanges" onClick={() => isMobile ? setActiveMenu(false) : null}>Ranking</Link>
+                        <Link to="/exchanges" onClick={() => handleSelection()}>Ranking</Link>
                     </Menu.Item>
                     <Menu.Item icon={<BulbOutlined />} key="news">
-                        <Link to="/news" onClick={() => isMobile ? setActiveMenu(false) : null}>News</Link>
+                        <Link to="/news" onClick={() => handleSelection()}>News</Link>
                     </Menu.Item>
                 </Menu>
         </div>

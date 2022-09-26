@@ -18,9 +18,9 @@ const Exchanges = () => {
     <>
       <Row>
         <Col span={6}>Exchanges</Col>
-        <Col span={6}>24h Trade Volume</Col>
-        <Col span={6}>Markets</Col>
-        <Col span={6}>Price</Col>
+        <Col span={5}>24h Trade Volume</Col>
+        <Col span={4}>Markets</Col>
+        <Col span={4}>Price</Col>
       </Row>
       <Row>
         {exchangesList?.map((exchange) => (
@@ -31,14 +31,14 @@ const Exchanges = () => {
                 showArrow={false}
                 header={(
                   <Row key={exchange.uuid} className="header-exchange">
-                    <Col span={6}>
+                    <Col span={5}>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
-                      <Text><strong>{exchange.rank}.</strong></Text>
-                      <Text><strong>{exchange.name}</strong></Text>
+                      <Text style={{ textAlign: 'center' }}><strong>{exchange.name}</strong></Text>
                     </Col>
-                    <Col span={6}>${millify(exchange['24hVolume'])}</Col>
-                    <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
-                    <Col span={6}>{millify(exchange.price)}<Avatar className="expand-icon" src={icon} width="25px" height="25px" /></Col>
+                    <Col span={5}>${millify(exchange['24hVolume'])}</Col>
+                    <Col span={5}>{millify(exchange.numberOfMarkets)}</Col>
+                    <Col span={5}>{millify(exchange.price)}</Col>
+                    <Col span={2}><Avatar className="expand-icon" src={icon} width="25px" height="25px" /></Col>
                   </Row>
                 )}
               >
