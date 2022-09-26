@@ -13,7 +13,7 @@ import icon from '../assets/cryptocurrency.png';
 const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState(true);
     const [screenSize, setScreenSize] = useState(true);
-
+    const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth);
         window.addEventListener('resize', handleResize);
@@ -23,8 +23,10 @@ const Navbar = () => {
 
     useEffect(() => {
         if (screenSize < 800) {
+            setIsMobile(true);
             setActiveMenu(false);
         } else {
+            setIsMobile(false);
             setActiveMenu(true);
         }
     },[screenSize])
@@ -42,18 +44,18 @@ const Navbar = () => {
                 </div>
 
                 {activeMenu && 
-                <Menu theme="dark">
+                <Menu theme="dark" className="menu-items">
                     <Menu.Item icon={<HomeOutlined />} key="homepage">
-                        <Link to="/" onClick={() => setActiveMenu(false)}>Home</Link>
+                        <Link to="/" onClick={() => isMobile ? setActiveMenu(false) : null}>Home</Link>
                     </Menu.Item>
                     <Menu.Item icon={<FundOutlined />} key="currencies">
-                        <Link to="/currencies" onClick={() => setActiveMenu(false)}>Currencies</Link>
+                        <Link to="/currencies" onClick={() => isMobile ? setActiveMenu(false) : null}>Currencies</Link>
                     </Menu.Item>
                     <Menu.Item icon={<MoneyCollectOutlined />} key="exchanges">
-                        <Link to="/exchanges" onClick={() => setActiveMenu(false)}>Ranking</Link>
+                        <Link to="/exchanges" onClick={() => isMobile ? setActiveMenu(false) : null}>Ranking</Link>
                     </Menu.Item>
                     <Menu.Item icon={<BulbOutlined />}  key="news">
-                        <Link to="/news" onClick={() => setActiveMenu(false)}>News</Link>
+                        <Link to="/news" onClick={() => isMobile ? setActiveMenu(false) : null}>News</Link>
                     </Menu.Item>
                 </Menu>
                 }
